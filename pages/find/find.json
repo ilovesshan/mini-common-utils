@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "tabs": "/common/tabs/tabs"
+  },
+  "navigationBarTitleText": "发现"
 }

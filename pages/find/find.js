@@ -1,30 +1,51 @@
-// pages/find/find.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    currentIndex: 0,
+    currentData: 0,
 
+    tabList: [{
+        id: 1,
+        title: "推荐"
+      }, {
+        id: 2,
+        title: "新款"
+      },
+      {
+        id: 3,
+        title: "热门"
+      }, {
+        id: 4,
+        title: "销量"
+      }
+    ]
+  },
+  //获取当前滑块的index
+  bindchange: function (e) {
+    const that = this;
+    that.setData({
+      currentData: e.detail.current
+    })
+  },
+  //点击切换，滑块index赋值
+  checkCurrent: function (e) {
+    const that = this;
+
+    if (that.data.currentData === e.target.dataset.current) {
+      return false;
+    } else {
+
+      that.setData({
+        currentData: e.target.dataset.current
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  tabChange(e) {
+    this.setData({
+      currentIndex: e.detail.index
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
@@ -32,39 +53,4 @@ Page({
       });
     }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

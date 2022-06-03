@@ -4,7 +4,6 @@
     "pages/addressBook/addressBook",
     "pages/find/find",
     "pages/profile/profile",
-
     "common/addressPicker/pop-up/index"
   ],
   "tabBar": {

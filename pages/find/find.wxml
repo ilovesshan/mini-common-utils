@@ -1,2 +1,13 @@
-<!--pages/find/find.wxml-->
-<text>pages/find/find.wxml</text>
+<view class="find-container">
+  <view class='swiper-tab-bar'>
+    <view wx:for="{{ tabList }}" wx:key="index" class=" swiper-tab-bar-item {{ index == currentData ? 'active' : '' }}" data-current="{{ index}}" bindtap='checkCurrent'>
+      {{ item.title}}
+      <view wx:if="{{  index == currentData  }}" class="swiper-tab-bar-active"></view>
+    </view>
+  </view>
+  <swiper current="{{currentData}}" class=' swiper-tab-bar-content' duration="300" bindchange="bindchange">
+    <swiper-item class="swiper-tab-bar-content" wx:for="{{ tabList }}" wx:key="index" class='swiper_con'>
+      <view wx:if="{{  index == currentData  }}">{{ item.title }}</view>
+    </swiper-item>
+  </swiper>
+</view>

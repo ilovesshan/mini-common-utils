@@ -1,0 +1,52 @@
+.cl-tabs {
+  background-color: #ffffff;
+
+}
+
+.cl-tabs-scroll {
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.cl-tabs-noscroll {
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+
+}
+
+.cl-tab {
+  position: relative;
+  min-width: 0;
+  padding: 0 20rpx;
+  text-align: center;
+  cursor: pointer;
+  color: #000000;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.cl-tabs-scroll .cl-tab {
+  display: inline-block;
+  padding: 0 30rpx;
+}
+
+.cl-tabs-noscroll .cl-tab {
+  flex: 1;
+}
+
+.cl-tab-active {
+  font-weight: 500;
+  color: #f63434;
+}
+
+.cl-tabs__line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 6rpx;
+  background-color: #f63434;
+}
