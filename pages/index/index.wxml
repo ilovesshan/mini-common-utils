@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <view>{{ motto }}</view>
+  <button class="container-btn" bindtap="requestData">发送网络请求</button>
+  <button class="container-btn" bindtap="getUserProfile">授权</button>
+  <button class="container-btn" bindtap="getUserAddress">省市联动插件</button>
+  <city-picker visible="{{visible}}" column="{{3}}" values="{{values}}" bind:close="handleClick" bind:confirm="handleConfirm" />
+</view>

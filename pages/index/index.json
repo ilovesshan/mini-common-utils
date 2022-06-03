@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "city-picker": "/common/addressPicker/cityPicker/index"
+    }
+}
