@@ -1,0 +1,7 @@
+<!--custom-tab-bar/custom-tab-bar.wxml-->
+<view class="custom-tab-bar-container">
+  <view class="custom-tab-bar-container-item" wx:for="{{ tabList }}" wx:key="index" data-index="{{ index }}" bindtap="onTap">
+    <image class="custom-tab-bar-container-item-icon" src="{{selected === index ? item.selectedIconPath :  item.iconPath}}" />
+    <text class="custom-tab-bar-container-item-text {{ selected === index ? 'active' : ''}}">{{item.text }}</text>
+  </view>
+</view>
