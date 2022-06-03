@@ -1,1 +1,13 @@
-/* pages/message/message.wxss */
+/**index.wxss**/
+.container {
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-btn {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
