@@ -18,7 +18,7 @@
 .custom-tab-bar-container-item-icon {
   width: 50rpx;
   height: 50rpx;
-  margin: 10rpx 0;
+  margin: 6rpx 0;
 }
 
 .custom-tab-bar-container-item-text {
