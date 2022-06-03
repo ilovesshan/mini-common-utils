@@ -17,7 +17,7 @@
     text-align: center;
   }
   
-  .picker-view__pane {
+  .picker-view-pane {
     height: 100rpx;
     width: 100%;
     padding: 20rpx 32rpx;
@@ -27,12 +27,12 @@
     box-sizing: border-box;
   }
   
-  .picker-view__pane text{
+  .picker-view-pane-text{
     color: #00cc88;
     font-size: 30rpx;
   }
   
-  .pick-view__group {
+  .pick-view-group {
     width: 96%;
     height: 450rpx;
   }
