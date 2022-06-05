@@ -1,2 +1,13 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+
+<mp-uploader 
+  bindfail="uploadError" 
+  bindsuccess="uploadSuccess"
+  select="{{selectFile}}" 
+  upload="{{uplaodFile}}" 
+  files="{{files}}" 
+  max-count="10" 
+  title="图片上传" 
+  tips="图片上传提示"
+  delete="{{ true }}"
+ >
+ </mp-uploader>
