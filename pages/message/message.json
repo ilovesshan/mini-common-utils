@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "city-picker": "/common/addressPicker/cityPicker/index"
+    "city-picker": "/common/addressPicker/cityPicker/index",
+    "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
 }
 }

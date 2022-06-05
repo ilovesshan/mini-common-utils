@@ -5,4 +5,40 @@
   <button class="container-btn" bindtap="getUserProfile">授权</button>
   <button class="container-btn" bindtap="getUserAddress">省市联动插件</button>
   <city-picker visible="{{visible}}" column="{{3}}" values="{{values}}" bind:close="handleClick" bind:confirm="handleConfirm" />
+
+
+  <view class="container-btn">
+    <picker value="{{index}}" range='{{ ["one","two","three"] }}' bindchange="bindPickerChange">
+      <button class="container-btn">Picker组件(native)</button>
+    </picker>
+  </view>
+
+
+  <button class="container-btn" bindtap="openGoodsTypeSelectorDialog">Picker组件(WEUI)</button>
+  <mp-half-screen-dialog 
+    bindbuttontap="buttontap"
+    show="{{showGoodsTypeSelectorDialog }}"
+    maskClosable="{{ true }}" 
+    closabled="{{ false }}" 
+    title="测试标题B" 
+    subTitle="测试标题B的副标题"
+>
+<view slot="desc">
+ <scroll-view scroll-y="true" style="height: 400rpx;">
+  <view bindtap="onSclectorlick" data-name="{{ item.name }}" wx:for="{{goodspes}}" wx:key="index" style="display: flex; flex-direction: row; border-bottom: 1px solid #eee; height: 100rpx; line-height: 100rpx;">
+    <view style="flex: 1; text-align: left;">{{ item.type}}</view>
+    <view style="flex: 1; text-align: left;">{{ item.name}}</view>
+    <view style="flex: 3; text-align: center;">参考价{{ item.price}}/kg</view>
+  </view>
+ </scroll-view>
+</view>
+
+  <view slot="footer" style="width: 100%; display: flex; justify-content: space-around; align-items: center;">
+    <button bindtap="onCancellick" style="padding: 10rpx 80rpx; border-radius: 50rpx; color: #666666;  font-size: 30rpx;" class="mini-btn" type="default" size="mini">取消</button>
+    <button bindtap="onSureCick" style="padding: 10rpx 80rpx; border-radius: 50rpx; color: #ffffff;  font-size: 30rpx;" class="mini-btn" type="primary" size="mini">确认</button>
+  </view>
+
+</mp-half-screen-dialog>
+
+
 </view>

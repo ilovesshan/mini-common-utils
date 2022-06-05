@@ -17,6 +17,67 @@ Page({
   data: {
     values: [10, 6, 0],
     visible: false,
+    array: ['美国', '中国', '巴西', '日本'],
+
+    showGoodsTypeSelectorDialog: false,
+
+    goodspes: [{
+      "type": "纸",
+      "name": "书纸",
+      "price": "0.68"
+    }, {
+      "type": "电器",
+      "name": "电冰箱",
+      "price": "20.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "纸",
+      "name": "书纸",
+      "price": "0.68"
+    }, {
+      "type": "电器",
+      "name": "电冰箱",
+      "price": "20.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }, {
+      "type": "电器",
+      "name": "洗衣机",
+      "price": "10.68"
+    }],
 
     motto: 'Hello World',
     userInfo: {},
@@ -25,6 +86,36 @@ Page({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
+
+  openGoodsTypeSelectorDialog() {
+    this.setData({
+      showGoodsTypeSelectorDialog: true,
+    });
+  },
+
+  buttontap(e) {
+    console.log(e.detail)
+  },
+
+  onSclectorlick(e) {
+    console.log(e);
+    const { name } = e.currentTarget.dataset;
+    console.log(e.currentTarget.dataset);
+      showToast("onSclectorlick 点击了" + name);
+  },
+  onSureCick() {
+    showToast("onSureCick 点击了确定");
+  },
+  onCancellick() {
+    showToast("onCancellick 点击了取消");
+    this.setData({
+      showGoodsTypeSelectorDialog: false,
+    });
+  },
+
+
+
+
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
@@ -122,5 +213,10 @@ Page({
       });
     }
   },
+
+  bindPickerChange(v) {
+    console.log("picker bindPickerChange...");
+    console.log(v);
+  }
 
 })
