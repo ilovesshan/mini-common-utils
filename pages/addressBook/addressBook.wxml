@@ -1,2 +1,27 @@
-<!--pages/addressBook/addressBook.wxml-->
-<text>pages/addressBook/addressBook.wxml</text>
+<mp-searchbar 
+    ext-class="myclass"
+    placeholder="输入关键字"
+    bindfocus="bindfocus"
+    bindblur="bindblur"
+    bindclear="bindclear"
+    bindinput="bindinput"
+    bindselectresult="bindselectresult"
+    search="{{ bindSearch }}"
+    value="{{ keyword }}"
+  >
+  </mp-searchbar>
+  
+<view class="custom-mp-vtabs">
+  <mp-vtabs 
+    vtabs="{{vtabs}}" 
+    activeTab="{{activeTab}}" 
+    bindtabclick="onTabCLick"
+    bindchange="onChange"
+  >
+    <block wx:for="{{vtabs}}" wx:key="title" >
+      <mp-vtabs-content tabIndex="{{index}}">
+        <view class="vtabs-content-item">我是第{{index + 1}}项： {{item.title}}</view>
+      </mp-vtabs-content>
+    </block>
+  </mp-vtabs>
+</view>

@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@miniprogram-component-plus/vtabs": "^1.0.0",
+    "@miniprogram-component-plus/vtabs-content": "^1.0.0",
+    "miniprogram-component-plus": "^1.0.0",
     "weui-miniprogram": "^1.2.3"
   }
 }

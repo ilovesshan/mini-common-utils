@@ -1,30 +1,35 @@
 // pages/addressBook/addressBook.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    vtabs: [],
+    activeTab: 0,
+    keyword:"",
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onLoad() {
+    const titles = ['热搜推荐', '手机数码', '家用电器','生鲜果蔬', '酒水饮料', '生活美食'];
+    const vtabs = titles.map(item => ({title: item}));
+    this.setData({
+      vtabs,
+      // bindfocus: this.bindfocus.bind(this),
+      // bindblur: this.bindblur.bind(this),
+      // bindclear: this.bindclear.bind(this),
+      // bindinput: this.bindinput.bind(this),
+      // bindselectresult: this.bindselectresult.bind(this),
+      bindSearch: this.bindSearch.bind(this)
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onTabCLick(e) {
+    const index = e.detail.index
+    console.log('tabClick', index)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  onChange(e) {
+    const index = e.detail.index
+    console.log('change', index)
+  },
+
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
@@ -33,38 +38,34 @@ Page({
     }
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  bindfocus(){
+    console.log("在输入框focus的时候触发事件");
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  bindblur(){
+    console.log("在输入框blur的时候触发事件");
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  bindclear(){
+    console.log("在clear按钮点击的时候触发事件");
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  bindinput(e){
+    console.log("在输入框输入过程中触发事件");
+    console.log(this.data.keyword);
+    console.log(e.detail.value);
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
+  bindselectresult(e){
+    console.log("在选择搜索结果的时候触发事件");
+    console.log(e);
+  },
 
-  }
+  bindSearch(value){
+   return new Promise((resolve, reject)=>{
+     setTimeout(()=>{
+      resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}]) 
+     },2000)
+   })
+  },
 })
